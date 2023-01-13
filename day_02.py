@@ -59,4 +59,6 @@ print(bin(number))
 print(hex(number))
 print(oct(number))
 
-print(ord(" "))
+print(ord(" ")) # 32가 출력
+
+print(type('98.3'))
