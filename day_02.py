@@ -62,3 +62,19 @@ print(oct(number))
 print(ord(" ")) # 32가 출력
 
 print(type('98.3'))
+
+a=[]
+print(bool(a))
+a.append(5) # a라는 list에 숫자 5 삽입 -> 빈 리스트가 아니므로 true 출력
+print(bool(a))
+print(bool(set())) #빈 set와 빈dic은 false 반환
+print(bool(dict()))
+
+vowels ='aeiou'
+letter='x'
+if letter not in vowels:
+    print(f'{letter}는 자음')
+
+vowel_set={'a','e','i','o','u'}
+
+print(letter in vowel_set)
