@@ -78,3 +78,18 @@ if letter not in vowels:
 vowel_set={'a','e','i','o','u'}
 
 print(letter in vowel_set)
+
+
+limits = 20
+tweets = "pass"*6
+
+diff = limits-len(tweets)
+if diff >= 0:
+    print('fit well')
+else:
+    print(f'글자수{abs(diff)}초과') #글자수 4초과 출력
+
+if diff:= limits-len(tweets) >= 0:
+    print('fit well')
+else:
+    print(f'글자수{abs(diff)}초과') # 글자수 0초과 출력 because 이 := 식에서 diff는 false라는 값을 가지므로 숫자0을 반환
