@@ -49,3 +49,14 @@ print(b) # 2가 출력
 
 # a,b,c = test #unpacking : test에 할당 된 숫자의 개수는 2개이므로 오류 발생
 
+# number =0b10011010
+# number2=0x9A
+# print(number)
+# print(number2)
+
+number =154
+print(bin(number))
+print(hex(number))
+print(oct(number))
+
+print(ord(" "))
