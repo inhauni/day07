@@ -15,3 +15,10 @@ while count<len(questions):
     note='\n:'.join(note_list)
     print(note, '\n')
     count += 1
+
+
+
+#6.1
+
+for k in [3,2,1,0]:
+    print(k, end=' ')
