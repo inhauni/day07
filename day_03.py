@@ -1,60 +1,20 @@
-start = 'na '*4+'\n'
-middle = "hey "*3+'\n'
-end = 'bye'
+#while
 
-print(start+start+middle+end)
-
-univ='Inha University'
-
-print(univ[:])
-print(univ[2:])
-print(univ[5:15])
-print(univ[-10:-6])
-
-pokemon_list=['피카츄','라이츄','파이리']
-pokemon_string='*'.join(pokemon_list)
-print(pokemon_string)
-
-subjects =' ! phython, data structure, database !   !!!'
-print(subjects)
-print(subjects.strip())
-print(subjects.strip('!')) # 단, !앞에 공백이 존재하면 제거되지 않는다
+while True: #무한루프
+    dan = int(input('Dan : '))
+    if 1 < dan < 10:
+        i = 1
+        while i < 10:
+            print('{0}*{1} ={2}'.format(dan, i, dan * i))
+            i += 1
+        break #여기에 break를 넣지 않으면 dan*9까지 반복 후 다시 무한루프 초기로 돌아가서 dan을 입력 받는다
+    else:
+        print('2에서 9의 값을 다시 입력하시오.')
 
 
-subjects2='pyhton, data structure, database'
-print(subjects2.find('data'),subjects.index('data'))
-print(subjects2.find('inha'))
+while True:
+    stuff =input('string to capitalize[type q to quit] : ')
+    if stuff== 'q':
+        break
+    print(stuff.capitalize())
 
-
-thing=98.6
-print('%12.3f' % thing)
-
-
-print('duck is'.title())
-
-thing='wereduck'
-place='werepond'
-print(f'{thing = :>10.3}')
-print(f'{thing[-3:-1]=}')
-
-
-song="""When an eel grabs your arm,
-And it causes great harm,
-That's -a moray!"""
-
-#Q.m으로 시작하는 단어를 M으로 바꿔라
-
-
-#song = song.replace(song[idx], song[idx].upper())
-
-song_list = song.split()
-print(song_list[13])
-song_list[13] = song_list[13].title()
-song_string=' '.join(song_list)
-print(song_string)
-
-
-
-#Q3
-
-print('My kitty cat likes %s,\nMy kitty cat likes %s,\nMy kitty cat fell on his %s And now thinks he\'s a %s.' % ('roast beef','ham','head','clam'))
