@@ -1,9 +1,8 @@
 
-fahrenheit= float(input("화씨온도 : "))
-celsius=(fahrenheit-32.0)*5.0/9.0
+fahrenheit= int(input("화씨온도 : "))
+celsius=(fahrenheit-32)*5/9.0
 
-print(f'화씨 온도 {fahrenheit}도는 섭씨온도 {celsius}도와 같다')
-
+print(f'화씨 온도 {fahrenheit}도는 섭씨온도 {celsius:.4f}도와 같다') # 소수점 아래 4자리까지 출력
 # 교재
 # for countdown in 5,4,2,1, "hey!":
 #   print(countdown)
