@@ -42,8 +42,19 @@ song="""When an eel grabs your arm,
 And it causes great harm,
 That's -a moray!"""
 
+#Q.m으로 시작하는 단어를 M으로 바꿔라
 
-idx = song.rfind('m')
+
 #song = song.replace(song[idx], song[idx].upper())
 
-print(song)
+song_list = song.split()
+print(song_list[13])
+song_list[13] = song_list[13].title()
+song_string=' '.join(song_list)
+print(song_string)
+
+
+
+#Q3
+
+print('My kitty cat likes %s,\nMy kitty cat likes %s,\nMy kitty cat fell on his %s And now thinks he\'s a %s.' % ('roast beef','ham','head','clam'))
