@@ -89,3 +89,44 @@ print('{}y McDuckface\n{}y McGourdface\n{}y McSpitzface\n\n'.format(m1,m2,m3))
 print(f'{m1}y McDuckface\n{m2}y McGourdface\n{m3}y McSpitzface\n\n')
 
 
+
+# 6.1
+
+for k in [3,2,1,0]:
+    print(k, end=' ')
+
+
+print('\n\n')
+
+
+# 6.2
+#
+guess_me=7
+number=1
+
+while True:
+    if number<guess_me:
+        print(f'{number} is too low')
+
+    elif number == guess_me:
+        print('found it!')
+        break
+    else:
+        print(f'{number} is too high')
+    number += 1
+
+
+# # 6.3
+#
+guess_me=5
+
+for i in range(10):
+    number=i
+    if number<guess_me:
+        print(f'{number} is too low')
+    elif number == guess_me:
+        print('found it!')
+        break
+    else:
+        print('oops')
+        break
