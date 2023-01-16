@@ -77,16 +77,14 @@ print('\n\n%s\n%s\n%s\n\n' % (eng, aus, swd))
 
 # 5.7
 
-m1='duck'
-m2='gourd'
-m3='spitz'
 
-print('{}y McDuckface\n{}y McGourdface\n{}y McSpitzface\n\n'.format(m1,m2,m3))
+
+print('{}\n{}\n{}\n\n'.format(eng,aus,swd))
 
 
 # 5.8
 
-print(f'{m1}y McDuckface\n{m2}y McGourdface\n{m3}y McSpitzface\n\n')
+print(f'{eng}\n{aus}\n{swd}\n\n')
 
 
 
@@ -130,3 +128,6 @@ for i in range(10):
     else:
         print('oops')
         break
+
+for i in range(10,0,-1):
+    print(i)
