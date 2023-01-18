@@ -1,125 +1,34 @@
-# None
+# Closures : 일반 함수와 다르게 외부 함수의 변수 값을 기억 하고 있다
 
-# def do_nothing():
-#     pass
+def calculate():
+    x = 1
+    y = 2
 
-# print(do_nothing())
+    def add_sub(n): # x값과 y값(외부함수로부터 생성된 변수값)을 기억하고 있는 closure(고차함수)
 
-# mamamoo =['화사','솔라','휘인','문별']
+        # x=11 : 외부함수의 변수값을 변경하고 저장 -> 이는 calculate 함수의 x=1과 다르다 \
+                # 왜냐하면 x=11의 x는 local variable (지역변수) 이므로 함수 밖에선 효력을 상실한다.
 
-# # print(mamamoo.pop()) # 삭제 할 값 리턴 후 삭제
-# print(mamamoo.remove('문별')) # 삭제만 하고 리턴하지 않음 -> None 출력 none: 아무 것도 없다
-# print(mamamoo) #문별을 제외한 list가 출력됨
-
-import random
-
-# def calculate_fee(*args):
-#
-#     '''
-#     [놀이공원 요금계산 프로그램]
-#     :param args: 나이
-#     :return: 총 지불 요금
-#     '''
-#
-#     total = 0
-#     for age in args:
-#        if age >= 19: #adult
-#            total= total+10000
-#        else:
-#            total=total+3000
-#
-#     return total
-
-# print(calculate_fee(20,25,25))
-# print(calculate_fee(10,7,52,43))
-
-# def calculate_fee(args): # *args는 list를 하나의 튜플로 묶어버리니까 19(int)와 ([list])형태의 (튜플리스트)를 비교할 수 없다 ->Error 발생
-# # def calculate_fee(args)-> list: #반환하는 return값의 타입을 지정
-#
-#     '''
-#     [놀이공원 요금계산 프로그램]
-#     :param args: ages in list
-#     :return: 전체 인원 수, 어른 수, 아이 수, 지불할 입장료
-#     '''
-#
-#     total = 0
-#     adult = 0
-#     kid = 0
-#     for age in args:
-#        if age >= 19: #adult
-#            total= total+10000
-#            adult += 1
-#
-#        else:
-#            total=total+3000
-#            kid += 1
-#
-#     return [len(args), adult, kid, total]
-#
-#
-#
-# member=int(input('입장 인원 수 : '))
-#
-# ages=[random.randint(1,60) for age in range(member)] #comprehension
-# # ages=[]
-# # for i in range(member):
-# #     age=random.randint(1,100)
-# #     ages.append(age)
-# print(ages)
-# result=calculate_fee(ages)
-#
-# print(f'{result[0]}명 방문 하셨고 어른{result[1]}명, 아이{result[2]}명, 따라서 총 요금은 {result[-1]}원 입니다.')
+        return x + n - y
+    print('once') # 한번만 출력됨!!! add_sub로 들어가서 거기서 for문이 돌아감
+    return add_sub
 
 
+c1 = calculate() # 함수를 변수에 대입
 
-# def calculate_fee(args)->dict:
-#
-#     '''
-#     [놀이공원 요금계산 프로그램]
-#     :param args: ages in list
-#     :return: {'no_of_people':전체 인원 수, 'adult':어른 수, 'kid':아이 수, 'tatal':지불할 입장료}
-#     '''
-#
-#     total = 0
-#     adult = 0
-#     kid = 0
-#     for age in args:
-#        if age >= 19: #adult
-#            total= total+10000
-#            adult += 1
-#
-#        else:
-#            total=total+3000
-#            kid += 1
-#
-#     return {'no_of_people':len(args), 'adult':adult, 'kid':kid, 'total':total}
-#
-# print(calculate_fee.__doc__) # help(calculate_fee)와 같다
-#
-# member=int(input('입장 인원 수 : '))
-#
-# ages=[random.randint(1,60) for age in range(member)] #comprehension
-# # ages=[]
-# # for i in range(member):
-# #     age=random.randint(1,100)
-# #     ages.append(a
-# result=calculate_fee(ages)
-#
-# print(f"{result['no_of_people']}명 방문 하셨고 어른{result['adult']}명, 아이{result['kid']}명, 따라서 총 요금은 {result['total']}원 입니다.")
+for i in range(5):
+    print(c1(i)) # add_sub(i)와 같은 의미
 
-def subtract(n1,n2):
-    print(n1-n2)
+#nonlocal : 지역함수 해제
+def calculate():
+    x = 1
+    y = 2
+    temp = 0
+    def add_sub(n):  # x값과 y값(외부함수로부터 생성된 변수값)을 기억하고 있는 closure(고차함수)
+        nonlocal temp
+        # x=11 : 외부함수의 변수값을 변경하고 저장 -> 이는 calculate 함수의 x=1과 다르다 \
+        # 왜냐하면 x=11의 x는 local variable (지역변수) 이므로 함수 밖에선 효력을 상실한다.
+        temp = temp + x +n - y # 이전의 temp값이 남아있어 여기에 대입 된다
+        return temp
 
-def run_func(f,arg1,arg2):
-
-    '''
-    함수를 매개 변수로 받아 함수 안에서 해당 함수를 실행
-    :param f: 첫번쨰 인수는 함수
-    :param arg1: 정수값
-    :param arg2: 정수값
-    :return:
-    '''
-
-    f(arg1,arg2)
-
-run_func(subtract,99,88)
+    return add_sub
