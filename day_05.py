@@ -94,7 +94,7 @@ def calculate_fee(args)->dict:
 
     return {'no_of_people':len(args), 'adult':adult, 'kid':kid, 'total':total}
 
-
+print(calculate_fee.__doc__) # help(calculate_fee)와 같다
 
 member=int(input('입장 인원 수 : '))
 
