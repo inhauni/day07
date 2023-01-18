@@ -72,38 +72,54 @@ import random
 
 
 
-def calculate_fee(args)->dict:
+# def calculate_fee(args)->dict:
+#
+#     '''
+#     [놀이공원 요금계산 프로그램]
+#     :param args: ages in list
+#     :return: {'no_of_people':전체 인원 수, 'adult':어른 수, 'kid':아이 수, 'tatal':지불할 입장료}
+#     '''
+#
+#     total = 0
+#     adult = 0
+#     kid = 0
+#     for age in args:
+#        if age >= 19: #adult
+#            total= total+10000
+#            adult += 1
+#
+#        else:
+#            total=total+3000
+#            kid += 1
+#
+#     return {'no_of_people':len(args), 'adult':adult, 'kid':kid, 'total':total}
+#
+# print(calculate_fee.__doc__) # help(calculate_fee)와 같다
+#
+# member=int(input('입장 인원 수 : '))
+#
+# ages=[random.randint(1,60) for age in range(member)] #comprehension
+# # ages=[]
+# # for i in range(member):
+# #     age=random.randint(1,100)
+# #     ages.append(a
+# result=calculate_fee(ages)
+#
+# print(f"{result['no_of_people']}명 방문 하셨고 어른{result['adult']}명, 아이{result['kid']}명, 따라서 총 요금은 {result['total']}원 입니다.")
+
+def subtract(n1,n2):
+    print(n1-n2)
+
+def run_func(f,arg1,arg2):
 
     '''
-    [놀이공원 요금계산 프로그램]
-    :param args: ages in list
-    :return: {'no_of_people':전체 인원 수, 'adult':어른 수, 'kid':아이 수, 'tatal':지불할 입장료}
+    함수를 매개 변수로 받아 함수 안에서 해당 함수를 실행
+    :param f: 첫번쨰 인수는 함수
+    :param arg1: 정수값
+    :param arg2: 정수값
+    :return:
     '''
 
-    total = 0
-    adult = 0
-    kid = 0
-    for age in args:
-       if age >= 19: #adult
-           total= total+10000
-           adult += 1
+    f(arg1,arg2)
 
-       else:
-           total=total+3000
-           kid += 1
-
-    return {'no_of_people':len(args), 'adult':adult, 'kid':kid, 'total':total}
-
-print(calculate_fee.__doc__) # help(calculate_fee)와 같다
-
-member=int(input('입장 인원 수 : '))
-
-ages=[random.randint(1,60) for age in range(member)] #comprehension
-# ages=[]
-# for i in range(member):
-#     age=random.randint(1,100)
-#     ages.append(a
-result=calculate_fee(ages)
-
-print(f"{result['no_of_people']}명 방문 하셨고 어른{result['adult']}명, 아이{result['kid']}명, 따라서 총 요금은 {result['total']}원 입니다.")
-
+run_func(subtract,99,88)
