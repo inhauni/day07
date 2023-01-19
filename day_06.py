@@ -29,11 +29,17 @@ def document_info(func):
         return result
     return new_function
 
+#자동 입력
 
+@document_info
 def sub_int(a, b):
     return a+b
 
-#수동 입력
+print(sub_int(3,5))
 
-info_sub_int=document_info(sub_int)
-print(info_sub_int(7, 3))
+
+@document_info
+def squares(n):
+    return n*n
+
+print(squares(5))
