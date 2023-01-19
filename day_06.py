@@ -13,3 +13,9 @@ for group, mems in groups.items():
         if mem != '승리':
             print(mem)
 
+
+
+generator_compre=(f'Got {pair}' for pair in range(10))
+
+for x in generator_compre:
+    print(x)
