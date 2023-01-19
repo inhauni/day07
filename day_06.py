@@ -1,35 +1,36 @@
-# 재귀함수
-# factorial
+# Error
+
+# def div_calc(a,b):
+#     '''
+#     나눗셈
+#     :param a: 실수
+#     :param b: 실수
+#     :return: 계산 결과
+#     '''
+#
+#     return a / b
+#
+# print(div_calc(15,3))
+# print(div_calc(15,0)) # ZeroDivisionError
+
+# <예외 처리>
+try :
+    expr = input('분자 분모 입력 (띄어쓰기로 구분) : ').split()
+    print(int(expr[0])/int(expr[1]))
 
 
-def factorial_iter(n):
-    '''
-    반복문을 사용한 팩토리얼 함수
-    :param n: n!
-    :return: int type의 팩토리얼 계산 결과 값
-    '''
+   # 발생 가능한 에러 : ZeroDivisionError , ValueError , IndexError, etc..
+except ValueError as err:
+    print(f'{err}, 숫자를 입력해주세요!')
+except ZeroDivisionError as err:
+    print(f'{err}, 분모에 0이 올 수 없습니다!')
+except IndexError as err:
+    print(f'{err}, 인덱스의 범위에 문제가 있습니다!')
+except Exception as other: # 기타 발생할 수 있는 모든 예외들
+    print(f'{other}, 예외 발생')
 
-    result = 1
+else: # 예외가 발생하지 않았을 때 동작
+    print('프로그램 정상',end=' ') #밑의 finally까지 함께 실행되어 '프로그램 정상 종료' 출력
 
-    for k in range(1,n+1):
-        result= result*k
-
-    return result
-
-print(factorial_iter(5))
-
-
-def factorial_recu(n):
-    '''
-    재귀함수 사용한 factorial 함수
-    :param n: n!
-    :return: 자기 자신을 호출
-    '''
-
-    if n == 1:
-        return 1 # 함수 종료 조건
-    else:
-        return factorial_recu(n-1) * n
-
-
-print(factorial_recu(5))
+finally: # 예외 발생 여부와 상관 없이 무조건 실행
+    print('종료') # 오류 발생시 예외 출력과 finally만 실행되어 '종료'만 출력
