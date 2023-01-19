@@ -1,21 +1,23 @@
-# 파이썬 예제 문제
+# <Class>
 
-groups ={
-    '빅뱅':['지디','태양','탑','대성','승리',],
-    '마마무' :['화사','문별','솔라','휘인']
-}
+# class Cat:
+#     pass
+#
+# a_cat = Cat()
+# another_Cat=Cat()
+# print(a_cat)
+#
+# a_cat.age =3
+# a_cat.name ="abc"
+# a_cat.nemesis='another_cat'
+# print(a_cat.age)
 
-for group, mems in groups.items():
+class Pokemon:
 
-    print(f'{group}의 멤버:')
+    def __init__(self): # 객체 생성시 동작
+        print("포켓몬 객체 생성됨")
 
-    for mem in mems:
-        if mem != '승리':
-            print(mem)
+p1=Pokemon() # '포켓몬 객체 생성됨' 이 출력됨
+p2=Pokemon() # '포켓몬 객체 생성됨' 이 출력됨
 
-
-
-generator_compre=(f'Got {pair}' for pair in range(10))
-
-for x in generator_compre:
-    print(x)
+print(p1,p2) # 두 객체의 주소가 다르다. = 다른 객체이다.
