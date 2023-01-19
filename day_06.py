@@ -1,30 +1,35 @@
-# 전역 함수
-
-# g =1
-#
-# def print_global():
-#     print(g)
-#
-# print(g)
-# print_global() #두개 다 출력 됨
+# 재귀함수
+# factorial
 
 
-def print_global():
-    g = 1
-    print(g)
-#
-# print_global()
-# print(g) # Error 발생 'g' 는 전역변수가 아니므로 (지역변수), 함수 밖에선 보이지 않는다
-#
-# g=1
-# def change_print_global():
-#     global g # 이 함수에서 사용하는 g는 전역변수 g라는 것을 알려주는 함수
-#     print(g)
-#     g=2  # 전역변수 g의 값을 2로 바꿈
-#     print(g)
-#
-# change_print_global()
-# print_global()
-# print(g) # 2가 출력
+def factorial_iter(n):
+    '''
+    반복문을 사용한 팩토리얼 함수
+    :param n: n!
+    :return: int type의 팩토리얼 계산 결과 값
+    '''
+
+    result = 1
+
+    for k in range(1,n+1):
+        result= result*k
+
+    return result
+
+print(factorial_iter(5))
 
 
+def factorial_recu(n):
+    '''
+    재귀함수 사용한 factorial 함수
+    :param n: n!
+    :return: 자기 자신을 호출
+    '''
+
+    if n == 1:
+        return 1 # 함수 종료 조건
+    else:
+        return factorial_recu(n-1) * n
+
+
+print(factorial_recu(5))
