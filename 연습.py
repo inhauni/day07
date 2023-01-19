@@ -68,3 +68,18 @@
 # #
 # # for i in x: # 제너레이터 객체의 형태로 for문을 통해 순환 가능
 # #     print(i)
+
+
+drinks={
+    'a':{1,11,111},
+    'b':{2,22,222},
+    'c':{3,33,334}
+}
+
+for alph,num in drinks.items():
+    if 334 in num:
+        num.remove(334)
+        num.add(333)
+        print(num)
+    else:
+        print(num)
