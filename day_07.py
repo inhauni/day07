@@ -106,3 +106,78 @@ don=Duck('Donald')
 # d2= Duck('Induk')
 # print(don.color, Duck.color, d2.color)
 
+
+# < 덕 타이핑>
+
+# EX 1)
+
+# class Quote:
+#     def __init__(self,person,words):
+#         self.person=person
+#         self.words=words
+#     def who(self):
+#         return self.person
+#     def says(self):
+#         return self.words + '.'
+#
+# class QuestionQuote(Quote):
+#     def says(self):
+#         return self.words + '?'
+#
+# class ExclamationQuote(Quote):
+#     def says(self):
+#         return self.words + '!'
+#
+# hunter =Quote('emma',"i'm hunting wabbits")
+# print(hunter.who(), 'says: ', hunter.says())
+#
+# hunted1=QuestionQuote('jack',"what's up, doc")
+# print(hunted1.who(), 'says: ', hunted1.says())
+#
+# hunted2=QuestionQuote('lucy',"hello")
+# print(hunted2.who(), 'says: ', hunted2.says())
+
+# EX 2
+import math
+
+class Shape:
+    def __init__(self,x,y):
+        self.x=x
+        self.y=y
+    def get_area(self):
+        print('도형의 면적을 출력합니다')
+
+class Circle(Shape):
+    def __init__(self,x,y,radius):
+        super().__init__(x,y)
+        self.radius=radius
+
+    def get_area(self): # override
+        return math.pi * self.radius * self.radius
+
+class Rectangle(Shape):
+    def __init__(self,x,y,width,length):
+        super().__init__(x,y)
+        self.width=width
+        self.length=length
+
+    def get_area(self): # override
+        return self.width * self.length
+
+
+class Cylinder(Circle):
+    def __init__(self,x,y,radius,height):
+        super().__init__(x,y,radius)
+        self.height=height
+    def get_area(self): #부피 구하기
+        # return math.pi * self.radius * self.radius * self.height
+        return super().get_area() * self.height
+
+c1=Circle(100,100,10.0)
+c2=Circle(50,50,2.0)
+r1=Rectangle(100,50,5,2)
+cy1=Cylinder(50,20, 10.0,2)
+print(f'원 1의 좌표는 x:{c1.x}, y:{c1.y}이고 넓이는 {c1.get_area():.4f} 입니다.')
+print(f'원 2의 좌표는 x:{c2.x}, y:{c2.y}이고 넓이는 {c2.get_area():.4f} 입니다.')
+print(f'사각형의 좌표는 x:{r1.x}, y:{r1.y}이고 넓이는 {r1.get_area()} 입니다.')
+print(f'실린더의 좌표는 x:{cy1.x}, y:{cy1.y}이고 부피는 {cy1.get_area():.4f} 입니다.')
