@@ -15,33 +15,32 @@
 
 
 # <decorator 총정리>
-# def test(func):
-#     def new_func(*args):
-#         print('start')
-#         result=func(*args)
-#         print(func.__name__)
-#         print('end')
-#         result=result-10
-#         return result
-#
-#     return new_func
-#
-# def double(func):
-#     def real_double(*no):
-#         result=func(*no)
-#         print(func.__name__)
-#         print(result*result)
-#         return result*result
-#     return real_double
-# @test
+def test(func):
+    def new_func(*args):
+        print('start')
+        result=func(*args)
+        print(func.__name__)
+        print('end')
+        result=result-10
+        return result
+    return new_func
+
+def double(func):
+    def real_double(*no):
+        result=func(*no)
+        print(func.__name__)
+        print(result*result)
+        return result*result
+    return real_double
+@test
 # @double
-# def complicated_number(*args):
-#     x=args[0]
-#     y=args[1]
-#     n=args[2]
-#     return x+y-n
-#
-# print(complicated_number(3,7,2))
+def complicated_number(*args):
+    x=args[0]
+    y=args[1]
+    n=args[2]
+    return x+y-n
+
+print(type(complicated_number(3,5,7)))
 
 
 # <예외 발생 raise>
@@ -70,16 +69,28 @@
 # #     print(i)
 
 
-drinks={
-    'a':{1,11,111},
-    'b':{2,22,222},
-    'c':{3,33,334}
-}
+# drinks={
+#     'a':{1,11,111},
+#     'b':{2,22,222},
+#     'c':{3,33,334}
+# }
+#
+# for alph,num in drinks.items():
+#     if 334 in num:
+#         num.remove(334)
+#         num.add(333)
+#         print(num)
+#     else:
+#         print(num)
 
-for alph,num in drinks.items():
-    if 334 in num:
-        num.remove(334)
-        num.add(333)
-        print(num)
-    else:
-        print(num)
+
+
+
+def knights(saying):
+    def inner():
+
+        return 'we are %s' % saying
+    return inner
+
+a=knights('okay')
+print(type(a()))
