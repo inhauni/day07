@@ -148,61 +148,64 @@ don=Duck('Donald')
 # print(hunted2.who(), 'says: ', hunted2.says())
 
 # EX 2
-import math
+# import math
+#
+# class Shape:
+#     def __init__(self,x,y):
+#         self.x=x
+#         self.y=y
+#     def get_area(self):
+#         print('도형의 면적을 출력합니다')
+#
+# class Circle(Shape):
+#     def __init__(self,x,y,radius):
+#         super().__init__(x,y)
+#         self.radius=radius
+#
+#     def get_area(self): # override
+#         return math.pi * self.radius * self.radius
+#
+# class Rectangle(Shape):
+#     def __init__(self,x,y,width,length):
+#         super().__init__(x,y)
+#         self.width=width
+#         self.length=length
+#
+#     def get_area(self): # override
+#         return self.width * self.length
+#
+#     def __repr__(self): # 매직 메서드
+#         return f'사각형의 좌표는 x:{self.x}, y:{self.y}이고 넓이는 {self.get_area()} 입니다.'
+#
+#     def __add__(self, other): # 호출 시에 + 기호가 함께 들어오면 다음과 같이 계산 한 값을 반환하여라
+#         return Rectangle(0,0,self.width+other.width, self.length + other.length) # 각 사각형의 가로 세로 길이를 각각 더한 new rectangle 반환
+#         # -> 이 경우, rectangle이 반환되면서 print로 출력시에 __repr__()의 형태로 출력됨
+#         # return (self.width * self.length)+(other.width * other.length) # 두 사각형의 넓이의 합이라는 '정수값'이 return 됨
+#
+# class Cylinder(Circle):
+#     def __init__(self,x,y,radius,height):
+#         super().__init__(x,y,radius)
+#         self.height=height
+#     def get_area(self): #부피 구하기
+#         # return math.pi * self.radius * self.radius * self.height
+#         return super().get_area() * self.height
+#
+#
+#
+# c1=Circle(100,100,10.0)
+# c2=Circle(50,50,2.0)
+# r1=Rectangle(100,50,6,2)
+# r2=Rectangle(30,50,14,4)
+# cy1=Cylinder(50,20, 10.0,2)
+#
+# # print(f'원 1의 좌표는 x:{c1.x}, y:{c1.y}이고 넓이는 {c1.get_area():.4f} 입니다.')
+# # print(f'원 2의 좌표는 x:{c2.x}, y:{c2.y}이고 넓이는 {c2.get_area():.4f} 입니다.')
+# # print(f'사각형의 좌표는 x:{r1.x}, y:{r1.y}이고 넓이는 {r1.get_area()} 입니다.')
+# # print(f'실린더의 좌표는 x:{cy1.x}, y:{cy1.y}이고 부피는 {cy1.get_area():.4f} 입니다.')
+#
+# print(r2) #__repr__()가 호출 된다
+# print(r1)
+# print(r1 + r2) # r1.add(r2)를 +기호로 나타내기 위하여 __add__()라는 매직 메서드를 사용
 
-class Shape:
-    def __init__(self,x,y):
-        self.x=x
-        self.y=y
-    def get_area(self):
-        print('도형의 면적을 출력합니다')
-
-class Circle(Shape):
-    def __init__(self,x,y,radius):
-        super().__init__(x,y)
-        self.radius=radius
-
-    def get_area(self): # override
-        return math.pi * self.radius * self.radius
-
-class Rectangle(Shape):
-    def __init__(self,x,y,width,length):
-        super().__init__(x,y)
-        self.width=width
-        self.length=length
-
-    def get_area(self): # override
-        return self.width * self.length
-
-    def __repr__(self): # 매직 메서드
-        return f'사각형의 좌표는 x:{self.x}, y:{self.y}이고 넓이는 {self.get_area()} 입니다.'
-
-    def __add__(self, other): # 호출 시에 + 기호가 함께 들어오면 다음과 같이 계산 한 값을 반환하여라
-        return Rectangle(0,0,self.width+other.width, self.length + other.length) # 각 사각형의 가로 세로 길이를 각각 더한 new rectangle 반환
-        # -> 이 경우, rectangle이 반환되면서 print로 출력시에 __repr__()의 형태로 출력됨
-        # return (self.width * self.length)+(other.width * other.length) # 두 사각형의 넓이의 합이라는 '정수값'이 return 됨
-
-class Cylinder(Circle):
-    def __init__(self,x,y,radius,height):
-        super().__init__(x,y,radius)
-        self.height=height
-    def get_area(self): #부피 구하기
-        # return math.pi * self.radius * self.radius * self.height
-        return super().get_area() * self.height
 
 
-
-c1=Circle(100,100,10.0)
-c2=Circle(50,50,2.0)
-r1=Rectangle(100,50,6,2)
-r2=Rectangle(30,50,14,4)
-cy1=Cylinder(50,20, 10.0,2)
-
-# print(f'원 1의 좌표는 x:{c1.x}, y:{c1.y}이고 넓이는 {c1.get_area():.4f} 입니다.')
-# print(f'원 2의 좌표는 x:{c2.x}, y:{c2.y}이고 넓이는 {c2.get_area():.4f} 입니다.')
-# print(f'사각형의 좌표는 x:{r1.x}, y:{r1.y}이고 넓이는 {r1.get_area()} 입니다.')
-# print(f'실린더의 좌표는 x:{cy1.x}, y:{cy1.y}이고 부피는 {cy1.get_area():.4f} 입니다.')
-
-print(r2) #__repr__()가 호출 된다
-print(r1)
-print(r1 + r2) # r1.add(r2)를 +기호로 나타내기 위하여 __add__()라는 매직 메서드를 사용
