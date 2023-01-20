@@ -74,10 +74,11 @@ while True:
             p = Pairi(n, sk)
         else:
             print('1,2,3 중에서 골라주세요: ')
-        info_attack =input('1) 정보 조회 2) 공격 : ')
-        if info_attack == '1':
-            p.info()
-        elif info_attack == '2':
+        info_attack =input('공격하시겠습니까? (y/n) : ')
+        if info_attack == 'n':
+            print('프로그램을 종료합니다')
+            break
+        elif info_attack == 'y':
             p.info()
             attack_menu = input('공격 번호 선택 : ')
             p.attack(int(attack_menu)-1)
